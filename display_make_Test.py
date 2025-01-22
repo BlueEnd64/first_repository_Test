@@ -87,11 +87,23 @@ def heat_map(xcord,ycord):
 
 
 
+lst=['1','2','3','4','5','6','7','8','9','0']
+size_input_test=False
 
+while size_input_test == False:
+    count=0
+    size= input('Enter the screen size nxn :')
 
-size= int(input('Enter the screen size nxn :'))
-
-assert size>0,"Input is less then 0." # If the input is less then 0 screen_size and display Cease to function
+    for x in size:
+        print(x)
+        if x in lst:
+            count+=1
+    if count==len(size):
+        size_input_test=True
+    else:
+        print('Input Error %s is not a int'%size)
+size=int(size)
+#assert size>0,"Input is less then 0." # If the input is less then 0 screen_size and display Cease to function
 
 
 treasure_x = r.randint(0,size-1)
